@@ -1,6 +1,8 @@
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import webhandlers.LikeServlet;
+import webhandlers.LoginServlet;
 
 public class ServerApp {
     public static void main(String[] args) throws Exception {
@@ -8,8 +10,9 @@ public class ServerApp {
 
         ServletContextHandler handler = new ServletContextHandler();
 
-        handler.addServlet(new ServletHolder(TestServlet.class), "/test/*");
-//        handler.addServlet(new ServletHolder(StaticServlet.class), "/users/*");
+        handler.addServlet(new ServletHolder(LikeServlet.class), "/users/*");
+        handler.addServlet(new ServletHolder(LoginServlet.class), "/login/*");
+
 
         server.setHandler(handler);
         server.start();
