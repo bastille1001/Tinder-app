@@ -23,7 +23,7 @@ public class Message {
 
     public String getContent() { return content; }
 
-    public String getDate() { return DateConverter.format(date); }
+    public long getDate() { return date; }
 
     public String getDateString() { return DateConverter.format(date); }
 
